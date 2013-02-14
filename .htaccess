@@ -1,0 +1,6 @@
+#Finally found at http://stackoverflow.com/questions/1445385/how-to-remove-index-php-in-codeigniters-path
+RewriteEngine on
+RewriteCond $1 !^(index\.php|resources|robots\.txt)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L,QSA] 

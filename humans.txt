@@ -1,0 +1,16 @@
+# The humans responsible & technology colophon
+# humanstxt.org
+
+
+# TEAM
+
+    Eric Binnion - @ebinnion
+
+# THANKS
+
+    H5BP - http://html5boilerplate.com/
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    jQuery, Modernizr, Drought

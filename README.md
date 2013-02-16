@@ -8,6 +8,11 @@ students that use this tool will be able to:
  - Show social networking links.
  - Change the design of their personal website with background images and basic styles.
 
+#How to Install
+College Profile Generator was built for ease of use. Since it is built using SQLite as a database and the base url is set dynamically, all you have to do is *upload the directory* to your server.
+
+Once you have uploaded the files to your server, you can login by going to the settings page (http://you.com/settings). To login the username and password are both admin. Be sure to update your password after you have logged in for the first time.
+
 #Created By
 This tool was created with love by [Eric Binnion][1] to be released on [Art of Blog][2]. This Github repository is meant as a way to store our source code. For more information about the project, visit [Art of Blog][2].
 
@@ -20,6 +25,7 @@ College Profile Generator was built with the help of many other open sourced pro
  - [jHtmlArea][4]
  - [jQuery Image Select][8]
  - [Drought][9]
+ - [SQLite][10]
 
 All background patterns are under creative commons and courtesy of [Subtle Patterns][3].
 
@@ -43,3 +49,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   [7]:https://github.com/jquery/jquery-ui/blob/master/MIT-LICENSE.txt
   [8]:http://codecanyon.net/item/jquery-image-select/3946862
   [9]:https://github.com/jamesfleeting/Drought
+  [10]:http://www.sqlite.org/copyright.html

@@ -1394,6 +1394,9 @@ img {
 form#settings label {
   font-weight: bold;
 }
+.jHtmlArea iframe {
+  background: #fff!important;
+}
 .sh-img-select-image-wrapper img {
   width: 50px;
   height: 50px;

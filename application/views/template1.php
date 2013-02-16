@@ -83,7 +83,7 @@
 
 	<footer role="contentinfo">
 		<div class="container cf">
-			<p>&copy; Copyright 2012 <a href="http://jamesfleeting.com" title="James Fleeting">James Fleeting</a>, All Rights Reserved.</p>
+			<p>&copy; Copyright <?php echo date('Y'); ?> <?php echo $object[0]['name']; ?>, All Rights Reserved.</p>
 		</div>
 	</footer>
 

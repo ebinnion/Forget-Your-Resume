@@ -88,7 +88,7 @@
 				<p><textarea name ="aboutme" rows="10" cols="10" class="texteditor" style="background: #fff!important;"><?php echo $object[0]['aboutme']; ?></textarea></p>
 
 				<h3>Your Resume</h3>
-				<p>Use the text editor below to create your resume. I recommend using the headline tags (h3,h4,h5) to
+				<p>Use the text editor below to create your resume. I recommend using the headline tags (h3,h4,h5) to separate your content</p>
 				<p><label>Your Resume</label></p>
 				<p><textarea name ="resume" rows="10" cols="10" class="texteditor" style="background: #fff!important;"><?php echo $object[0]['resume']; ?></textarea></p>
 

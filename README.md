@@ -19,7 +19,7 @@ I have created a small video series on Youtube to help you get up and running wi
 
 Once you have uploaded the files to your server, you can login by going to the settings page (http://you.com/settings). To login the username and password are both admin. Be sure to update your password after you have logged in for the first time.
 
-If you have issues with your settings not saving, then you will likely need to change the permissions on the /application/db folder so that they are writeable. I suggest trying 755, 775, then 777 until you settings are able to be saved.
+If you have issues with your settings not saving, then you will likely need to change the permissions on the /application/db folder so that they are writeable. I suggest trying 755, then 775, then 777 until settings are able to be saved.
 
 #Created By
 This tool was created with love by [Eric Binnion][1] to be released on [Art of Blog][2]. This Github repository is meant as a way to store our source code. For more information about the project, visit [Art of Blog][2].

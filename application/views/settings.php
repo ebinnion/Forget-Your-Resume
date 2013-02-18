@@ -96,7 +96,7 @@
 				<div class="cf">
 					<p><label style="margin-right: 10px;">Page Background:</label><input class="show-color" type="color" name="bgcolor" value="<?php echo $object[0]['bgcolor']; ?>"></p>
 					<p><label style="margin-right: 10px;">Content Background:</label><input class="show-color" type="color" name="contentbg" value="<?php echo $object[0]['contentbg']; ?>">
-							<label style="margin: 0 10px;">Invisible?</label><input type="checkbox" name="contentbgvis" value="Yes" <?php if(isset($object[0]['contentbgvis'])){ echo 'checked="checked"';} ?> ></p>
+							<label style="margin: 0 10px;">Invisible?</label><input type="checkbox" name="contentbgvis" value="Yes" <?php if($object[0]['contentbgvis'] == 'Yes'){ echo 'checked="checked"';} ?> ></p>
 					<p><label style="margin-right: 10px;">Footer Background:</label><input class="show-color" type="color" name="footerbg" value="<?php echo $object[0]['footerbg']; ?>"></p>
 					<p><label style="margin-right: 10px;">Image Border:</label><input class="show-color" type="color" name="imgborder" value="<?php echo $object[0]['imgbordercolor']; ?>"></p>
 					<p><label style="margin-right: 10px;">Font Color:</label><input class="show-color" type="color" name="fontcolor" value="<?php echo $object[0]['fontcolor']; ?>"></p>

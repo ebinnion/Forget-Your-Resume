@@ -18,7 +18,6 @@
 	?>
 
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css?v=1">
-	<link rel="Stylesheet" href="<?php echo base_url(); ?>css/jHtmlArea.css" />
 	<link rel="stylesheet" href='<?php echo base_url(); ?>css/spectrum.css' />
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/sh-image-select.all.css" type="text/css" rel="stylesheet" />
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/jquery.ui.fontSelector.css" type="text/css" rel="stylesheet" />
@@ -88,7 +87,7 @@
 				<p><textarea name ="aboutme" rows="10" cols="10" class="texteditor" style="background: #fff!important;"><?php echo $object[0]['aboutme']; ?></textarea></p>
 
 				<h3>Your Resume</h3>
-				<p>Use the text editor below to create your resume. I recommend using the headline tags (h3,h4,h5) to separate your content</p>
+				<p>Use the text editor below to create your resume. I recommend using the headline tags (h3,h4,h5) to separate your content.</p>
 				<p><label>Your Resume</label></p>
 				<p><textarea name ="resume" rows="10" cols="10" class="texteditor" style="background: #fff!important;"><?php echo $object[0]['resume']; ?></textarea></p>
 
@@ -171,10 +170,12 @@
 	<script>window.jQuery || document.write('<script src="js/jquery-1.8.3.min.js"><\/script>')</script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
 
-	<script type="text/javascript" src="<?php echo base_url(); ?>js/jHtmlArea-0.7.5.js"></script>
 	<script src='<?php echo base_url(); ?>js/spectrum.js'></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>js/jquery.sh-image-select.all.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>js/jquery.ui.fontSelector.min.js"></script>
+
+	<script type="text/javascript" src="<?php echo base_url(); ?>tiny_mce/tiny_mce.js"></script>
+
 
 	<script src="<?php echo base_url(); ?>js/plugins.js"></script>
 	<script src="<?php echo base_url(); ?>js/main.js"></script>

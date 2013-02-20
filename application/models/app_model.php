@@ -56,6 +56,39 @@ class App_model extends CI_Model {
 			$data['styles'] .= 'h1 { font-family:"' . $data[0]['headlinefont'] . '";}';
 		}
 
+		$temp = array (
+			'facebook'		=> array (
+								'url' 	=> $data[0]['facebook'],
+								'name' 	=> 'facebook'
+								),
+			'twitter' 		=> array (
+								'url' 	=> $data[0]['twitter'],
+								'name' 	=> 'twitter'
+								),
+			'google'		=> array (
+								'url' 	=> $data[0]['google'],
+								'name' 	=> 'google-plus'
+								),
+			'pinterest'		=> array (
+								'url' 	=> $data[0]['pinterest'],
+								'name' 	=> 'pinterest'
+								),
+			'linkedin'		=> array (
+								'url' 	=> $data[0]['linkedin'],
+								'name' 	=> 'linkedin'
+								),
+			'github'		=> array (
+								'url' 	=> $data[0]['github'],
+								'name' 	=> 'github'
+								)
+		);
+	
+		foreach ( $temp as $t ){
+			if ( $t['url']){
+				$data['social_icons'][] = '<a href="' . $t['url'] . '" class="icon-' . $t['name'] . ' icon-large"></a>';
+			}
+		}
+
 		return $data;
 	}
 }

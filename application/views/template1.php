@@ -36,30 +36,11 @@
 			</hgroup>
 
 			<div class="social-icons pull-right">
-				
 				<?php
-					if ($object[0]['facebook']){
-						echo '<a href="'. $object[0]['facebook'] .'" class="icon-facebook icon-large"></a>';
-					}
-
-					if ($object[0]['twitter']){
-						echo '<a href="'. $object[0]['twitter'] .'" class="icon-twitter icon-large"></a>';
-					}
-
-					if ($object[0]['google']){
-						echo '<a href="'. $object[0]['google'] .'" class="icon-google-plus icon-large"></a>';
-					}
-
-					if ($object[0]['pinterest']){
-						echo '<a href="'. $object[0]['pinterest'] .'" class="icon-pinterest icon-large"></a>';
-					}
-
-					if ($object[0]['linkedin']){
-						echo '<a href="'. $object[0]['linkedin'] .'" class="icon-linkedin icon-large"></a>';
-					}
-
-					if ($object[0]['github']){
-						echo '<a href="'. $object[0]['github'] .'" class="icon-github icon-large"></a>';
+					if ( isset ($object['social_icons']) ){
+						foreach( $object['social_icons'] as $icon) {
+							echo $icon;
+						}
 					}
 				?>
 			</div>

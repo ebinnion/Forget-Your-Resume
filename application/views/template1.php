@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 
-	<title></title>
+	<title><?php echo $object[0]['name']; ?> | <?php echo $object[0]['tagline']; ?></title>
 
 	<link rel="author" href="<?php echo base_url(); ?>humans.txt">
 	<link rel="dns-prefetch" href="//ajax.googleapis.com">

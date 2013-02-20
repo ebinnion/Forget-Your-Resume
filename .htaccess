@@ -1,6 +1,89 @@
-#Finally found at http://stackoverflow.com/questions/1445385/how-to-remove-index-php-in-codeigniters-path
-RewriteEngine on
-RewriteCond $1 !^(index\.php|resources|robots\.txt)
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php/$1 [L,QSA] 
+# Enable mod_rewrite
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+</IfModule>
+
+# Enable symbolic links
+Options +FollowSymLinks
+
+# Disable index views
+Options All -Indexes
+
+# Specify the default language
+DefaultLanguage en
+
+# Specify the default character set
+AddDefaultCharset utf-8
+
+# Disable the server signature
+ServerSignature Off
+
+# Enable basic spell-checking
+<IfModule mod_speling.c>
+	CheckSpelling On
+</IfModule>
+
+# Enable file compression
+<IfModule mod_deflate.c>
+	<IfModule mod_setenvif.c>
+		<IfModule mod_headers.c>
+			SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ \
+			^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
+			RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
+		</IfModule>
+	</IfModule>
+	<IfModule mod_filter.c>
+		FilterDeclare COMPRESS
+		FilterProvider COMPRESS DEFLATE resp=Content-Type $text/css
+		FilterProvider COMPRESS DEFLATE resp=Content-Type $text/html
+		FilterProvider COMPRESS DEFLATE resp=Content-Type $text/javascript
+		FilterProvider COMPRESS DEFLATE resp=Content-Type $text/plain
+		FilterProvider COMPRESS DEFLATE resp=Content-Type $text/xml
+		FilterProvider COMPRESS DEFLATE resp=Content-Type $application/javascript
+		FilterChain COMPRESS
+		FilterProtocol COMPRESS DEFLATE change=yes;byteranges=no
+	</IfModule>
+	<IfModule !mod_filter.c>
+		AddOutputFilterByType DEFLATE text/css text/html text/plain text/xml
+		AddOutputFilterByType DEFLATE text/javascript application/javascript
+	</IfModule>
+	<IfModule mod_setenvif.c>
+		BrowserMatch ^Mozilla/4 gzip-only-text/html
+		BrowserMatch ^Mozilla/4\.0[678] no-gzip
+		BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+		SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+	</IfModule>
+	<IfModule mod_headers.c>
+		Header append Vary User-Agent env=!dont-vary
+		Header append Vary Accept-Encoding
+	</IfModule>
+</IfModule>
+
+# Optimize cache-control
+<IfModule mod_expires.c>
+	ExpiresActive on
+	ExpiresDefault "access plus 1 month"
+	ExpiresByType text/html "access plus 1 seconds"
+	ExpiresByType text/xml "access plus 1 seconds"
+	ExpiresByType text/plain "access plus 1 seconds"
+	ExpiresByType application/xml "access plus 1 seconds"
+	ExpiresByType application/rss+xml "access plus 1 seconds"
+	ExpiresByType application/json "access plus 1 seconds"
+	ExpiresByType text/css "access plus 1 week"
+	ExpiresByType text/javascript "access plus 1 week"
+	ExpiresByType application/javascript "access plus 1 week"
+	ExpiresByType application/x-javascript "access plus 1 week"
+	<IfModule mod_headers.c>
+		Header unset ETag
+		Header unset Pragma
+		Header unset Last-Modified
+		Header append Cache-Control "public, no-transform, must-revalidate"
+	</IfModule>
+</IfModule>
+
+<IfModule mod_rewrite.c>
+	RewriteCond $1 !^(index\.php|resources|robots\.txt)
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ index.php?/$1 [L,QSA] 
+</IfModule>

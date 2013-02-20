@@ -19,7 +19,6 @@
 
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css?v=1">
 	<link rel="stylesheet" href='<?php echo base_url(); ?>css/spectrum.css' />
-	<link rel="stylesheet" href="<?php echo base_url(); ?>css/sh-image-select.all.css" type="text/css" rel="stylesheet" />
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/jquery.ui.fontSelector.css" type="text/css" rel="stylesheet" />
 
 	<style type="text/css">
@@ -181,9 +180,7 @@
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
 
 	<script src='<?php echo base_url(); ?>js/spectrum.js'></script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>js/jquery.sh-image-select.all.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>js/jquery.ui.fontSelector.min.js"></script>
-
 	<script type="text/javascript" src="<?php echo base_url(); ?>tiny_mce/tiny_mce.js"></script>
 
 

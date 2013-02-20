@@ -73,7 +73,7 @@
 
 			<?php 
 				$attributes = array('id' => 'settings');
-				echo form_open('settings/process', $attributes); 
+				echo form_open_multipart('settings/process', $attributes); 
 			?>
 				
 				<h3>Admin</h3>
@@ -105,9 +105,7 @@
 					<p><label style="margin-right: 10px;">Link Hover Color:</label><input class="show-color" type="color" name="linkhovercolor" value="<?php echo $object[0]['linkhovercolor']; ?>"></p>
 				</div>
 				<h3>Images</h3>
-				<p><label>Profile Image:</label><input type="text" name="profileimg" class="pull-right input_xxlarge" value="<?php echo $object[0]['profileimg']; ?>"/></p>
-				<p>Copy and paste the url (including http://) of your image above. We recommend using a service such as <a href="http://photobucket.com">Photobucket</a> to host your image.</p>
-
+				<p><input type="file" name="userfile" /></p>
 				<p><label>Background Image</label></p>
 				<div class="cf">
 					<select multiple id="bgpattern" name="bgpattern">
@@ -126,7 +124,7 @@
 					</select>
 				</div>
 				<div class="cf" id="bgselector">
-					
+
 				</div>
 
 				<h3>Font</h3>
@@ -159,7 +157,16 @@
 		</div> <!-- #main -->
 
 		<aside role="complementary">
-			<img src="<?php echo $object[0]['profileimg'];?>">
+			<img src="
+			<?php 
+				if ( isset($object[0]['profileimg']) ){
+					echo $object[0]['profileimg'];
+				}
+				else {
+					echo 'http://dummyimage.com/320x400/efefef/000&text=Your+Image+Here';
+				}
+			?>
+			">
 		</aside>
 	</div>
 

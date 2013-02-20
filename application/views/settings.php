@@ -22,7 +22,7 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/jquery.ui.fontSelector.css" type="text/css" rel="stylesheet" />
 
 	<style type="text/css">
-		<?php echo $styles; ?>
+		<?php echo $object['styles']; ?>
 	</style>
 
 	<script src="<?php echo base_url(); ?>js/modernizr-2.6.2.min.js"></script>

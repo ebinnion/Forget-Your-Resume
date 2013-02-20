@@ -14,52 +14,7 @@ class Settings extends CI_Controller {
 			redirect('login');
 		}
 
-		$data['object'] = $this->db->get('options')->result_array();
-
-		$data['styles'] = '';
-
-		if ( isset( $data['object'][0]['background'] ) ){
-			$data['styles'] .= 'body { background:' . $data['object'][0]['background'] . '}';
-		}
-		else {
-			$data['styles'] .= 'body {background: url('. base_url() . 'images/patterns/bright_squares.png);}';
-		}
-
-		if ( isset( $data['object'][0]['headercolor'] ) ){
-			$data['styles'] .= 'h1 { color: ' . $data['object'][0]['headercolor'] . ';}';
-		}
-
-		if ( isset( $data['object'][0]['fontcolor'] ) ){
-			$data['styles'] .= 'body { color: ' . $data['object'][0]['fontcolor'] . ';}';
-		}
-
-		if ( isset( $data['object'][0]['taglinecolor'] ) ){
-			$data['styles'] .= 'hgroup h2 { color: ' . $data['object'][0]['taglinecolor'] . ';}';
-		}
-
-		if ( isset( $data['object'][0]['linkcolor'] ) ){
-			$data['styles'] .= 'a { color: ' . $data['object'][0]['linkcolor'] . ';}';
-		}
-
-		if ( isset( $data['object'][0]['linkhovercolor'] ) ){
-			$data['styles'] .= 'a:hover { color: ' . $data['object'][0]['linkhovercolor'] . ';}';
-		}
-
-		if ( isset( $data['object'][0]['imgbordercolor'] ) ){
-			$data['styles'] .= '[role="complementary"] img { border: 4px solid  ' . $data['object'][0]['imgbordercolor'] . ';}';
-		}
-
-		if ( isset( $data['object'][0]['contentbg'] ) ){
-			$data['styles'] .= '.content { background:  ' . $data['object'][0]['contentbg'] . ';}';
-		}
-
-		if ( isset( $data['object'][0]['footerbg'] ) ){
-			$data['styles'] .= '[role="contentinfo"] { background:' . $data['object'][0]['footerbg'] . ';}';
-		}
-
-		if ( isset( $data['object'][0]['headlinefont'] ) ){
-			$data['styles'] .= 'h1 { font-family:"' . $data['object'][0]['headlinefont'] . '";}';
-		}
+		$data['object'] = $this->app_model->get_options();
 
 		$this->load->view('settings', $data);
 	}
@@ -104,32 +59,32 @@ class Settings extends CI_Controller {
 		}
 
 		$data = array(
-		'name'            	=> $this->input->post('name'),
-		'tagline'         	=> $this->input->post('tagline'),
-		'aboutme'         	=> $this->input->post('aboutme'),
-		'profileimg'      	=> $profileimg,
-		'resume'          	=> $this->input->post('resume'),
-		'background'      	=> $background,
-		'theme'           	=> '',
-		'headercolor'     	=> $this->input->post('headercolor'),
-		'fontcolor'       	=> $this->input->post('fontcolor'),
-		'taglinecolor'     	=> $this->input->post('taglinecolor'),
-		'linkcolor'       	=> $this->input->post('linkcolor'),
-		'linkhovercolor'  	=> $this->input->post('linkhovercolor'),
-		'headlinefont'    	=> $this->input->post('headfont'),
-		'bodyfont'        	=> $this->input->post('bodyfont'),
-		'imgbordercolor'  	=> $this->input->post('imgborder'),
-		'contentbg'       	=> $contentbg,
-		'footerbg'        	=> $this->input->post('footerbg'),
-		'bgcolor'			=> $this->input->post('bgcolor'),
-		'bgpattern'      	=> $this->input->post('bgpattern'),
-		'contentbgvis'   	=> $this->input->post('contentbgvis'),
-		'facebook'       	=> $this->input->post('facebook'),
-		'twitter'        	=> $this->input->post('twitter'),
-		'google'         	=> $this->input->post('google'),
-		'pinterest'      	=> $this->input->post('pinterest'),
-		'linkedin'       	=> $this->input->post('linkedin'),
-		'github'         	=> $this->input->post('github')
+			'name'            	=> $this->input->post('name'),
+			'tagline'         	=> $this->input->post('tagline'),
+			'aboutme'         	=> $this->input->post('aboutme'),
+			'profileimg'      	=> $profileimg,
+			'resume'          	=> $this->input->post('resume'),
+			'background'      	=> $background,
+			'theme'           	=> '',
+			'headercolor'     	=> $this->input->post('headercolor'),
+			'fontcolor'       	=> $this->input->post('fontcolor'),
+			'taglinecolor'     	=> $this->input->post('taglinecolor'),
+			'linkcolor'       	=> $this->input->post('linkcolor'),
+			'linkhovercolor'  	=> $this->input->post('linkhovercolor'),
+			'headlinefont'    	=> $this->input->post('headfont'),
+			'bodyfont'        	=> $this->input->post('bodyfont'),
+			'imgbordercolor'  	=> $this->input->post('imgborder'),
+			'contentbg'       	=> $contentbg,
+			'footerbg'        	=> $this->input->post('footerbg'),
+			'bgcolor'			=> $this->input->post('bgcolor'),
+			'bgpattern'      	=> $this->input->post('bgpattern'),
+			'contentbgvis'   	=> $this->input->post('contentbgvis'),
+			'facebook'       	=> $this->input->post('facebook'),
+			'twitter'        	=> $this->input->post('twitter'),
+			'google'         	=> $this->input->post('google'),
+			'pinterest'      	=> $this->input->post('pinterest'),
+			'linkedin'       	=> $this->input->post('linkedin'),
+			'github'         	=> $this->input->post('github')
 		);
 
 		$this->db->where('id', 1);

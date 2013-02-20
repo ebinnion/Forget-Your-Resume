@@ -11,6 +11,9 @@ class Main extends CI_Controller {
      	if ( isset( $data['object'][0]['background'] ) ){
      		$data['styles'] .= 'body { background:' . $data['object'][0]['background'] . '}';
      	}
+          else {
+               $data['styles'] .= 'body {background: url('. base_url() . 'images/patterns/bright_squares.png);}';
+          }
 
      	if ( isset( $data['object'][0]['headercolor'] ) ){
      		$data['styles'] .= 'h1 { color: ' . $data['object'][0]['headercolor'] . ';}';

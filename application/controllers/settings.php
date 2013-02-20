@@ -21,6 +21,9 @@ class Settings extends CI_Controller {
 		if ( isset( $data['object'][0]['background'] ) ){
 			$data['styles'] .= 'body { background:' . $data['object'][0]['background'] . '}';
 		}
+		else {
+			$data['styles'] .= 'body {background: url('. base_url() . 'images/patterns/bright_squares.png);}';
+		}
 
 		if ( isset( $data['object'][0]['headercolor'] ) ){
 			$data['styles'] .= 'h1 { color: ' . $data['object'][0]['headercolor'] . ';}';
@@ -67,14 +70,12 @@ class Settings extends CI_Controller {
 		$config['allowed_types'] = 'gif|jpg|png|jpeg';
 		$config['max_size']    = '2000';
 
-		// You can give video formats if you want to upload any video file.
-
 		$this->load->library('upload', $config);
 
 		if ( ! $this->upload->do_upload())
 		{
 			$error = array('error' == $this->upload->display_errors());
-			// Uploading failed. $error will holds the errors.
+			// Uploading failed. $error will hold the errors.
 		}
 		else
 		{
@@ -89,8 +90,6 @@ class Settings extends CI_Controller {
 			$this->image_lib->resize();
 			$profileimg = base_url(). 'images/uploads/' . $image_data['upload_data']['file_name'];
 		}	
-
-
 
 		$background = $this->input->post('bgcolor');
 		if( $this->input->post('contentbgvis') ){

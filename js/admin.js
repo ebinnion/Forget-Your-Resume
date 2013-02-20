@@ -17,51 +17,46 @@ $(document).ready(function() {
 		skin : "o2k7",
 		skin_variant : "silver",
 
-		// Example content CSS (should be your site CSS)
-		content_css : "css/example.css",
-
 		// Drop lists for link/image/media/template dialogs
 		template_external_list_url : "js/template_list.js",
 		external_link_list_url : "js/link_list.js",
 		external_image_list_url : "js/image_list.js",
 		media_external_list_url : "js/media_list.js",
+	});
+	
+	// Background Image Selection
+	var bgpattern = $('#bgpattern');
+	bgpattern.hide();
 
-		// Replace values for the template plugin
-		template_replace_values : {
-		        username : "Some User",
-		        staffid : "991234"
-		}
+	var bgselector = $('#bgselector');
+
+	$('[data-image]').each(function (){
+		var img = $(this).data('image');
+		bgselector.append('<img src="' + img + '">');
 	});
 
-	$('#bgpattern').shImageSelect({
-		type:'radio',
-		maxSelected: '1',
-		showText: false,
-		imageLimit: {
-        	x:8,
-        	y:4
-    	}
-	});
-
-	$('.sh-img-select-image-wrapper img').live('click',function() {
+	$('#bgselector img').live('click',function() {
 		var img = $(this).attr('src');
 		$('body').css('background',function() {
 			var temp = 'url('+img+')';
 			return temp;
 		});
-	});
 
-	$('.toggle-arrow').live('click', function() {
-		$(this).toggleClass('toggled');
-		$('.controls').slideToggle();
+		$('#bgpattern option:selected').attr('selected',false);
+
+		$('[data-image]').each(function() {
+			if( $(this).data('image') == img ) {
+				$(this).attr('selected' , true);
+			}
+		});
 	});
 
 	$('select#headfont').fontSelector({
 		fontChange: function(e, ui) {
-		// Update page title according to the font that's set in the widget options:
-		$('h1').css({
-		fontFamily: ui.font,
-		});
+			// Update page title according to the font that's set in the widget options:
+			$('h1').css({
+				fontFamily: ui.font,
+			});
 		},
 		styleChange: function(e, ui) {
 			

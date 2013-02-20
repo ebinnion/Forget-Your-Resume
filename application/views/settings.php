@@ -125,6 +125,9 @@
 						?>
 					</select>
 				</div>
+				<div class="cf" id="bgselector">
+					
+				</div>
 
 				<h3>Font</h3>
 				<p>Header Font</p>

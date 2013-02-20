@@ -77,7 +77,16 @@
 		</div> <!-- #main -->
 
 		<aside role="complementary">
-			<img src="<?php echo $object[0]['profileimg'];?>">
+			<img src="
+			<?php 
+				if ( isset($object[0]['profileimg']) ){
+					echo $object[0]['profileimg'];
+				}
+				else {
+					echo 'http://dummyimage.com/320x400/efefef/000&text=Your+Image+Here';
+				}
+			?>
+			">
 		</aside>
 	</div>
 

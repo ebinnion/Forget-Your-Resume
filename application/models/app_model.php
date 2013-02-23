@@ -21,7 +21,7 @@ class App_model extends CI_Model {
 		}
 
 		if ( isset( $data[0]['headercolor'] ) ){
-			$data['styles'] .= 'h1 { color: ' . $data[0]['headercolor'] . ';}';
+			$data['styles'] .= '[role="banner"] h1 a { color: ' . $data[0]['headercolor'] . ';}';
 		}
 
 		if ( isset( $data[0]['fontcolor'] ) ){
@@ -29,7 +29,7 @@ class App_model extends CI_Model {
 		}
 
 		if ( isset( $data[0]['taglinecolor'] ) ){
-			$data['styles'] .= 'hgroup h2 { color: ' . $data[0]['taglinecolor'] . ';}';
+			$data['styles'] .= '[role="banner"] h2 { color: ' . $data[0]['taglinecolor'] . ';}';
 		}
 
 		if ( isset( $data[0]['linkcolor'] ) ){

@@ -90,6 +90,7 @@
 					will not appear until you submit the form.</p>
 				<p><label>Profile Image</label></p>
 				<p><input type="file" name="userfile" /></p>
+				<input type="hidden" name="profileimgval" value="<?php echo $object[0]['profileimg']; ?>">
 				<p><label>Background Image</label></p>
 				<div class="cf">
 					<select multiple id="bgpattern" name="bgpattern">

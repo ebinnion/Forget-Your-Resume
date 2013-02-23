@@ -11,15 +11,17 @@
 
 	<link rel="author" href="<?php echo base_url(); ?>humans.txt">
 	<link rel="dns-prefetch" href="//ajax.googleapis.com">
+
+	<link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css?v=1">
+
+	<link rel="stylesheet" href="<?php echo base_url(); ?>css/colorpicker/jquery.minicolors.css" type="text/css" rel="stylesheet" />
+	<link rel="stylesheet" href="<?php echo base_url(); ?>css/jquery.ui.fontSelector.css" type="text/css" rel="stylesheet" />
+
 	<?php 
 		if( isset( $object[0]['headlinefont']) ) {
 			echo '<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=' . $object[0]['headlinefont'] .'">';
 		}
 	?>
-
-	<link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css?v=1">
-	<link rel="stylesheet" href='<?php echo base_url(); ?>css/spectrum.css' />
-	<link rel="stylesheet" href="<?php echo base_url(); ?>css/jquery.ui.fontSelector.css" type="text/css" rel="stylesheet" />
 
 	<style type="text/css">
 		<?php echo $object['styles']; ?>
@@ -73,18 +75,20 @@
 
 				<h3>Colors</h3>
 				<div class="cf">
-					<p><label style="margin-right: 10px;">Page Background:</label><input class="show-color" type="color" name="bgcolor" value="<?php echo $object[0]['bgcolor']; ?>"></p>
-					<p><label style="margin-right: 10px;">Content Background:</label><input class="show-color" type="color" name="contentbg" value="<?php echo $object[0]['contentbg']; ?>">
+					<p><label style="margin-right: 10px;">Content Background:</label><input class="minicolors minicolors-input opacity" type="text" name="contentbg" value="<?php echo $object[0]['contentbg']; ?>" data-selector=".content" data-selecttype="background">
 							<label style="margin: 0 10px;">Invisible?</label><input type="checkbox" name="contentbgvis" value="Yes" <?php if($object[0]['contentbgvis'] == 'Yes'){ echo 'checked="checked"';} ?> ></p>
-					<p><label style="margin-right: 10px;">Footer Background:</label><input class="show-color" type="color" name="footerbg" value="<?php echo $object[0]['footerbg']; ?>"></p>
-					<p><label style="margin-right: 10px;">Image Border:</label><input class="show-color" type="color" name="imgborder" value="<?php echo $object[0]['imgbordercolor']; ?>"></p>
-					<p><label style="margin-right: 10px;">Font Color:</label><input class="show-color" type="color" name="fontcolor" value="<?php echo $object[0]['fontcolor']; ?>"></p>
-					<p><label style="margin-right: 10px;">Name Color:</label><input class="show-color" type="color" name="headercolor" value="<?php echo $object[0]['headercolor']; ?>"></p>
-					<p><label style="margin-right: 10px;">Tagline Color:</label><input class="show-color" type="color" name="taglinecolor" value="<?php echo $object[0]['taglinecolor']; ?>"></p>
-					<p><label style="margin-right: 10px;">Link Color:</label><input class="show-color" type="color" name="linkcolor" value="<?php echo $object[0]['linkcolor']; ?>"></p>
-					<p><label style="margin-right: 10px;">Link Hover Color:</label><input class="show-color" type="color" name="linkhovercolor" value="<?php echo $object[0]['linkhovercolor']; ?>"></p>
+					<p><label style="margin-right: 10px;">Footer Background:</label><input class="minicolors minicolors-input opacity" type="text" name="footerbg" value="<?php echo $object[0]['footerbg']; ?>" data-selector="footer" data-selecttype="background"></p>
+					<p><label style="margin-right: 10px;">Image Border:</label><input class="minicolors minicolors-input opacity" type="text" name="imgborder" value="<?php echo $object[0]['imgbordercolor']; ?>" data-selector='[role="complementary"] img' data-selecttype="border-color"></p>
+					<p><label style="margin-right: 10px;">Font Color:</label><input class="minicolors minicolors-input opacity" type="text" name="fontcolor" value="<?php echo $object[0]['fontcolor']; ?>" data-selector="body" data-selecttype="color"></p>
+					<p><label style="margin-right: 10px;">Name Color:</label><input class="minicolors minicolors-input opacity" type="text" name="headercolor" value="<?php echo $object[0]['headercolor']; ?>" data-selector='[role="banner"] h1 a' data-selecttype="color"></p>
+					<p><label style="margin-right: 10px;">Tagline Color:</label><input class="minicolors minicolors-input opacity" type="text" name="taglinecolor" value="<?php echo $object[0]['taglinecolor']; ?>" data-selector='[role="banner"] h2' data-selecttype="color"></p>
+					<p><label style="margin-right: 10px;">Link Color:</label><input class="minicolors minicolors-input opacity" type="text" name="linkcolor" value="<?php echo $object[0]['linkcolor']; ?>" data-selector='[role="main"] a' data-selecttype="color"></p>
+					<p><label style="margin-right: 10px;">Link Hover Color:</label><input class="minicolors minicolors-input opacity" type="text" name="linkhovercolor" value="<?php echo $object[0]['linkhovercolor']; ?>"data-selector='[role="main"] a:hover' data-selecttype="color"></p>
 				</div>
 				<h3>Images</h3>
+				<p>Here, you have the ability to select a background image and a profile image for your page. Please note that the profile image
+					will not appear until you submit the form.</p>
+				<p><label>Profile Image</label></p>
 				<p><input type="file" name="userfile" /></p>
 				<p><label>Background Image</label></p>
 				<div class="cf">
@@ -158,12 +162,12 @@
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/jquery-1.8.3.min.js"><\/script>')</script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>  
 
-	<script src='<?php echo base_url(); ?>js/spectrum.js'></script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>js/jquery.ui.fontSelector.min.js"></script>
+
 	<script type="text/javascript" src="<?php echo base_url(); ?>tiny_mce/tiny_mce.js"></script>
-
+	<script type="text/javascript" src="<?php echo base_url(); ?>js/colorpicker/jquery.minicolors.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>js/fontSelector/jquery.ui.fontSelector.js"></script>
 
 	<script src="<?php echo base_url(); ?>js/plugins.js"></script>
 	<script src="<?php echo base_url(); ?>js/main.js"></script>

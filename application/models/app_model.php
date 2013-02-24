@@ -53,7 +53,7 @@ class App_model extends CI_Model {
 		}
 
 		if ( isset( $data[0]['headlinefont'] ) ){
-			$data['styles'] .= 'h1 { font-family:"' . $data[0]['headlinefont'] . '";}';
+			$data['styles'] .= '[role="banner"] h1 { font-family:"' . $data[0]['headlinefont'] . '";}';
 		}
 
 		$temp = array (

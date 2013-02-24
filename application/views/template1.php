@@ -47,11 +47,11 @@
 		</header>
 
 		<div class="main" role="main">
-			<h2 style="margin: 0;">About Me</h2>
+			<h1 style="margin: 0;">About Me</h2>
 
 			<?php echo $object[0]['aboutme']; ?>
 
-			<h2>My Resume</h2>
+			<h1>My Resume</h2>
 
 			<?php echo $object[0]['resume']; ?>
 

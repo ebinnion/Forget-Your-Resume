@@ -1334,6 +1334,19 @@ a:hover {
   display: inline;
   width: 600px;
   margin-left: 30px;
+  overflow: hidden;
+}
+[role="main"] h1 {
+  font-size: 1.8em;
+}
+[role="main"] h2 {
+  font-size: 1em;
+}
+[role="main"] h3 {
+  font-size: 0.8em;
+}
+[role="main"] h4 {
+  font-size: 0.6em;
 }
 /* sidebar */
 [role="complementary"] {

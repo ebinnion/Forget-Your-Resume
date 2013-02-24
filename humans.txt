@@ -1,16 +1,23 @@
 # The humans responsible & technology colophon
 # humanstxt.org
 
-
 # TEAM
 
     Eric Binnion - @ebinnion
+    http://ericbinnion.com
+
+    Commissioned by http://artofblog.com
 
 # THANKS
 
     H5BP - http://html5boilerplate.com/
+    jQuery - http://jquery.com/
+    jQuery UI - http://jqueryui.com/
+    MiniColors - https://github.com/claviska/jquery-miniColors
+    Font Selector - http://lindekleiv.bitbucket.org/fontselector/
+    Dought - https://github.com/jamesfleeting/Drought
 
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
-    jQuery, Modernizr, Drought
+    jQuery, jQuery UI, Modernizr, Drought

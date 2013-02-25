@@ -152,6 +152,20 @@
 				}
 			?>
 			">
+			<hr>
+			<div class="optin">
+				<h3 style="text-align: center;">Sign Up Now for Forget Your Resume Updates!</h3>
+				<p>When you sign up for updates, you'll get exlusive access to advice for getting a dream job.</p>
+				<p>You will receive <em>infrequent</em> emails from us. We don't like spam either!</p>
+				<form action="https://app.getresponse.com/add_contact_webform.html" method="post">
+				<div style="text-align: center;">
+					<p><input class="name" tabindex="600" onfocus="if (this.value == 'Enter your name') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter your name';}" type="text" name="name" value="Enter your name" size="25"></p>
+					<p><input class="email" tabindex="601" onfocus="if (this.value == 'Enter your email') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter your email';}" type="text" name="email" value="Enter your email" size="25"></p>
+					<p><input type="hidden" name="webform_id" value="357026">
+						<input tabindex="602" type="submit" name="submit" value="Signup Now!"></p>
+				</div>
+				</form>
+			</div>
 		</aside>
 	</div>
 

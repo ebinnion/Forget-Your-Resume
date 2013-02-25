@@ -1426,11 +1426,11 @@ form#settings label {
 }
 .optin input[type="text"].name {
   background: #ffffff url(../images/sprite.png) no-repeat 2px -66px;
-  padding-left: 2.4em;
+  padding-left: 3em;
 }
 .optin input[type="text"].email {
   background: #ffffff url(../images/sprite.png) no-repeat 2px -119px;
-  padding-left: 2.4em;
+  padding-left: 3em;
 }
 .optin input[type="text"],
 .optin textarea {

@@ -114,4 +114,12 @@ $(document).ready(function() {
 		var value = $(this).val();
 		tagline.text(value);
 	});
+
+	if( $.cookie('first') == null ) { 
+          $('.optin').removeClass('hide');
+     }
+     $('#hideOpt').click(function(){
+          $.cookie( 'first', '1',  { expires: 7, path: '/' } );
+          $('.optin').addClass('hide');
+     });
 });

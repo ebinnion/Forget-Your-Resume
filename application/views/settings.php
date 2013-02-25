@@ -152,8 +152,9 @@
 				}
 			?>
 			">
-			<hr>
-			<div class="optin">
+			
+			<div class="optin hide">
+				<hr>
 				<h3 style="text-align: center;">Sign Up Now for Forget Your Resume Updates!</h3>
 				<p>When you sign up for updates, you'll get exlusive access to advice for getting a dream job.</p>
 				<p>You will receive <em>infrequent</em> emails from us. We don't like spam either!</p>
@@ -165,6 +166,7 @@
 						<input tabindex="602" type="submit" name="submit" value="Signup Now!"></p>
 				</div>
 				</form>
+				<p id="hideOpt" style="color: #999; font-size: 10px; text-align: center; cursor: pointer; margin-top: 30px;">X - Please do not show me this again.</p>
 			</div>
 		</aside>
 	</div>
@@ -183,6 +185,7 @@
 	<script type="text/javascript" src="<?php echo base_url(); ?>tiny_mce/tiny_mce.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>js/colorpicker/jquery.minicolors.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>js/fontSelector/jquery.ui.fontSelector.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>js/jquery.cookie.js"></script>
 
 	<script src="<?php echo base_url(); ?>js/plugins.js"></script>
 	<script src="<?php echo base_url(); ?>js/main.js"></script>

@@ -84,7 +84,9 @@ class Settings extends CI_Controller {
 			'google'         	=> $this->input->post('google'),
 			'pinterest'      	=> $this->input->post('pinterest'),
 			'linkedin'       	=> $this->input->post('linkedin'),
-			'github'         	=> $this->input->post('github')
+			'github'         	=> $this->input->post('github'),
+			'employers'			=> $this->input->post('companyNames'),
+			'employerMessage'	=> $this->input->post('companyMsgs')
 		);
 
 		$this->db->where('id', 1);

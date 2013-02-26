@@ -47,6 +47,14 @@
 		</header>
 
 		<div class="main" role="main">
+			<?php
+				if( isset( $company ) ){
+					echo '<div class="alert">';
+					echo $companyMsg;
+					echo '</div>';
+				}
+			?>
+
 			<h1 style="margin: 0;">About Me</h2>
 
 			<?php echo $object[0]['aboutme']; ?>

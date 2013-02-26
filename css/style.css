@@ -1466,6 +1466,78 @@ form#settings label {
   margin-right: .5em;
   padding: 26px 26px 26px 40px;
 }
+input[type="submit"].green {
+  background: #30a146;
+  background: -webkit-linear-gradient(top, #30a146 0%, #249334 100%);
+  background: -moz-linear-gradient(top, #30a146 0%, #249334 100%);
+  background: -o-linear-gradient(top, #30a146 0%, #249334 100%);
+  background: -ms-linear-gradient(top, #30a146 0%, #249334 100%);
+  background: linear-gradient(top, #30a146 0%, #249334 100%);
+  color: #fff;
+  cursor: pointer;
+  padding: 1em;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+  padding: 14px 80px;
+  width: 100%;
+}
+input[type="submit"]:hover.green {
+  background: #c2c2c2;
+  background: -webkit-linear-gradient(top, #c2c2c2 0%, #aeaeae 100%);
+  background: -moz-linear-gradient(top, #c2c2c2 0%, #aeaeae 100%);
+  background: -o-linear-gradient(top, #c2c2c2 0%, #aeaeae 100%);
+  background: -ms-linear-gradient(top, #c2c2c2 0%, #aeaeae 100%);
+  background: linear-gradient(top, #c2c2c2 0%, #aeaeae 100%);
+}
+.alert {
+  margin-bottom: 5px;
+  color: #3a87ad;
+  border: 1px solid #fbeed5;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  padding: 8px 35px 8px 14px;
+  border-radius: 4px;
+}
+/* Tabs */
+ul.tabs {
+  margin: 20px 0;
+  padding: 0;
+}
+.tab {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  border: solid 1px #999;
+  border-bottom: none;
+}
+.tab a {
+  font-size: 14px;
+  line-height: 2em;
+  display: block;
+  padding: 0 10px;
+  outline: none;
+  background: #efefef;
+}
+.tab a:hover {
+  text-decoration: underline;
+}
+.tab a.active {
+  background: #fff;
+}
+.tab a.active {
+  font-weight: bold;
+}
+.add-employer {
+  background: #fff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding: 6px 14px;
+  box-shadow: 0 0 10px #ccc;
+}
 /* Image replacement */
 .ir {
   background-color: transparent;

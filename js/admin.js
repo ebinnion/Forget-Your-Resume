@@ -201,7 +201,6 @@ $(document).ready(function() {
 				var temp = $(this).val();
 				aggregate += temp + ';'
 			});
-			console.log(aggregate);
 			return aggregate;
 		});
 

@@ -39,7 +39,7 @@ class Settings extends CI_Controller {
 			$config['source_image']	= $image_data['upload_data']['full_path'];
 			$config['maintain_ratio'] = FALSE;
 			$config['width'] = 320;
-			$config['width'] = 400;
+			$config['height'] = 400;
 
 			$this->load->library('image_lib', $config); 
 			$this->image_lib->resize();

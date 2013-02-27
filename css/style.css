@@ -1245,6 +1245,7 @@ body {
 }
 .container {
   width: 940px;
+  max-width: 100%;
   margin: 0 auto;
 }
 .content {
@@ -1254,6 +1255,7 @@ body {
 /* base */
 img {
   vertical-align: middle;
+  max-width: 100%;
 }
 hr {
   display: block;
@@ -1399,9 +1401,6 @@ a {
 a:hover {
   color: #999999;
   text-decoration: none;
-}
-img {
-  max-width: 100%;
 }
 /* Admin Specific Styles */
 form#settings label {
@@ -1606,6 +1605,55 @@ ul.tabs {
   background: #62aaf2;
   color: #fff;
   text-shadow: none;
+}
+@media only screen and (min-width: 1101px) {
+  [role="complementary"] {
+    width: 300px;
+    float: left;
+  }
+  [role="main"] {
+    width: 600px;
+    float: right;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  [role="complementary"] {
+    width: 30%;
+    float: left;
+  }
+  [role="main"] {
+    width: 60%;
+    float: right;
+  }
+  [role="banner"] hgroup {
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 760px) {
+  [role="complementary"] {
+    width: 100%;
+    float: none;
+  }
+  [role="main"] {
+    width: 100%;
+    float: none;
+  }
+  [role="banner"] h2 {
+    width: 100%;
+    float: none;
+    margin: 0!important;
+    clear: both;
+  }
+  [role="banner"] .social-icons {
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
+  [role="banner"] .social-icons a {
+    float: none;
+  }
 }
 @media print {
   * {

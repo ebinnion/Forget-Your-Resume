@@ -163,6 +163,7 @@
 					</div>
 
 					<div id="tabs6" style="min-height: 300px;">
+						<p><label>Name Font</label></p>
 						<select id="headfont" name="headfont">
 							<?php 
 								$fonts = array('Chelsea Market', 'Droid Serif', 'Ruluko', 'Ruda', 'Magra', 'Esteban', 'Lora', 'Jura');
@@ -176,6 +177,9 @@
 							?>
 							
 						</select>
+
+						<p><label>Google Analytics ID</label></p>
+						<p><input type="text" name="googleAnalytics" class="input_xlarge" value="<?php echo $object[0]['googleAnalyticsId']; ?>"></p>
 					</div>
 					<p style="text-align: center"><input type="submit" class="green"></p>
 				</form>

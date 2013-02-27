@@ -89,5 +89,16 @@
 	<script>window.jQuery || document.write('<script src="js/jquery-1.8.3.min.js"><\/script>')</script>
 	<script src="<?php echo base_url(); ?>js/plugins.js"></script>
 	<script src="<?php echo base_url(); ?>js/main.js"></script>
+
+	<?php
+		if( !empty($object[0]['googleAnalyticsId']) ) {
+			echo "<script>";
+			echo "var _gaq=[['_setAccount','" . $object[0]['googleAnalyticsId'] . "'],['_trackPageview']];";
+			echo "(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];";
+			echo "g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';";
+			echo "s.parentNode.insertBefore(g,s)}(document,'script'));";
+			echo "</script>";
+		}
+	?>
 </body>
 </html>

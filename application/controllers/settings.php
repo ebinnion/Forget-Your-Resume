@@ -90,7 +90,8 @@ class Settings extends CI_Controller {
 			'linkedin'       	=> $this->input->post('linkedin'),
 			'github'         	=> $this->input->post('github'),
 			'employers'			=> $this->input->post('companyNames'),
-			'employerMessage'	=> $this->input->post('companyMsgs')
+			'employerMessage'	=> $this->input->post('companyMsgs'),
+			'googleAnalyticsId'	=> $this->input->post('googleAnalytics')
 		);
 
 		$this->db->where('id', 1);

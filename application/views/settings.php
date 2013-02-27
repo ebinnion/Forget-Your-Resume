@@ -150,7 +150,7 @@
 								echo '<a href="#" class="icon-remove-circle removeCompany pull-right">  Delete</a>';
 								echo '<p style="margin-top: 0;"><label>Enter Company Name</label><br><input class="companyName" type="text" value="' . $employerList[$i] . '"></p>';
 								echo '<p><label>Enter Message to Company</label><br><textarea rows="10" class="companyMsg">' . $employerMsgList[$i] . '</textarea></p>';
-								echo '<p><label>Company URL</label><br><input class="input_full" type="text" value="' . base_url() . 'main/company/' . $companySlug . '" readonly></p>';
+								echo '<p><label>Company URL</label><br><input class="input_full" type="text" value="' . base_url() . 'company/' . $companySlug . '" readonly></p>';
 								echo '</div>';
 								echo '<hr>';
 								$i++;

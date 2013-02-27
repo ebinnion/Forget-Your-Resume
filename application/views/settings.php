@@ -184,11 +184,11 @@
 		<aside role="complementary">
 			<img src="
 			<?php 
-				if ( isset($object[0]['profileimg']) ){
-					echo $object[0]['profileimg'];
+				if ( isset($object[0]['profileimg']) || $object[0]['profileimg'] == '' || $object[0]['profileimg'] == ' '){
+					echo 'http://dummyimage.com/320x400/efefef/000&text=Your+Image+Here';
 				}
 				else {
-					echo 'http://dummyimage.com/320x400/efefef/000&text=Your+Image+Here';
+					echo $object[0]['profileimg'];
 				}
 			?>
 			">

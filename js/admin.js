@@ -30,11 +30,6 @@ $(document).ready(function() {
 		skin : "o2k7",
 		skin_variant : "silver",
 
-		// Drop lists for link/image/media/template dialogs
-		template_external_list_url : "js/template_list.js",
-		external_link_list_url : "js/link_list.js",
-		external_image_list_url : "js/image_list.js",
-		media_external_list_url : "js/media_list.js",
 	});
 	
 	/*****************************************************
@@ -174,9 +169,12 @@ $(document).ready(function() {
 	$('.add-employer').click(function(e) {
 		e.preventDefault();
 		var temp = $('#tabs5');
+		var numRand = String((new Date()).getTime()).replace(/\D/gi,'')
 
-		temp.prepend('<p><label>Enter Message to Company</label><br><textarea rows="10" class="companyMsg"></textarea></p>');
+		temp.prepend('<p><label>Enter Message to Company</label><br><textarea rows="10" id ="' + numRand + '"class="companyMsg"></textarea></p>');
 		temp.prepend('<p><label>Enter Company Name</label><br><input class="companyName" type="text"></p>');
+		
+		tinyMCE.execCommand('mceAddControl', false, numRand);
 	});
 
 	// This code block processes the employer messages section before submission.

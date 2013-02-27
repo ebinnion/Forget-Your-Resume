@@ -188,7 +188,7 @@
 		<aside role="complementary">
 			<img src="
 			<?php 
-				if ( !isset($object[0]['profileimg']) || $object[0]['profileimg'] == '' || $object[0]['profileimg'] == ' '){
+				if ( empty($object[0]['profileimg']) ){
 					echo 'http://dummyimage.com/320x400/efefef/000&text=Your+Image+Here';
 				}
 				else {

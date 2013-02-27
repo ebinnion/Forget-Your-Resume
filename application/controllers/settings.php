@@ -23,6 +23,7 @@ class Settings extends CI_Controller {
 
 	public function process() {
 		$profileimg = $this->input->post('profileimgval');
+
 		$config['upload_path'] = './images/uploads';
 		$config['allowed_types'] = 'gif|jpg|png|jpeg';
 		$config['max_size']    = '2000';

@@ -10,11 +10,9 @@ class Main extends CI_Controller {
 	}
 
 	public function company () {
-		$company = $this->uri->segment(3);
 
-		if ($company === false) {
-			redirect('/');
-		}
+		$segments = $this->uri->total_segments();
+		$company = $this->uri->segment($segments);
 
 		$data['object'] = $this->app_model->get_options();
 

@@ -9,9 +9,13 @@ class Login extends CI_Controller {
    }
 
 	public function index(){
-      if ( isset($_SESSION['username']) ) {
-         redirect('settings');
+      $this->load->model('Authentication_model');
+      
+      if ( isset($_SESSION['username']) && !$this->Authentication_model->has_updated_password() ) {
+         redirect('settings/password');
       }
+
+      $data = '';
 
       $this->load->library('form_validation');
       $this->form_validation->set_rules('user', 'Username', 'trim|required|min_length[4]');
@@ -21,22 +25,27 @@ class Login extends CI_Controller {
       $password = $this->input->post('password');
 
       if ( $this->form_validation->run() !== false ) {
-         // then validation passed. Get from db
-         $q = $this->db
-            ->where('user', $user)
-            ->where('password', sha1($password))
-            ->limit(1)
-            ->get('users');
 
-         if ( $q->num_rows > 0 ) {
-            // person has account with us
+         $this->load->model('Authentication_model');
+         
+         $q = $this->Authentication_model->check_if_user($user, $password);
+         
+         if ($q != FALSE) {
             $_SESSION['username'] = $this->input->post('user');
-            redirect('settings');
+            if ( !$this->Authentication_model->has_updated_password() ){
+               redirect('settings/password');
+            }
+            else {
+               redirect('settings');
+            }
+            
          }
-
+         else {
+            $data['prompt'] = '<p style="color: red;">Your login credentials are not correct. Please try again.</p>';
+         }
       }
 
-      $this->load->view('login');
+      $this->load->view('login', $data);
    }
 
    public function logout(){
@@ -45,6 +54,7 @@ class Login extends CI_Controller {
    }
 
    public function process() {
+      $data = '';
 
       $this->load->library('form_validation');
       $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[4]');
@@ -58,28 +68,31 @@ class Login extends CI_Controller {
          $newpass = $this->input->post('newpass');
          $newpass2 = $this->input->post('newpass2');
 
-         $q = $this->db
-            ->where('user', $user)
-            ->where('password', sha1($oldpass))
-            ->limit(1)
-            ->get('users');
+         if ($newpass != $oldpass) {
+            $this->load->model('Authentication_model');
+         
+            $q = $this->Authentication_model->check_if_user($user, $oldpass);
+            
+            if ( isset($q) ) {
+               // User exists
+               $data = array(
+                  'user'         => $user,
+                  'password'     => sha1($newpass),
+                  'updatedPass'  => true
+               );
 
-         if ( $q->num_rows > 0 ) {
-            // User exists
-            $data = array(
-               'user'      => $user,
-               'password'  => sha1($newpass)
-            );
+               $this->db->where('id', 1);
+               $this->db->update('users', $data); 
 
-            $this->db->where('id', 1);
-            $this->db->update('users', $data); 
-
-            redirect('settings');
+               redirect('settings');
+            }
          }
-
+         else {
+               $data['prompt'] = '<p style="color: red;">Your new and old password must be different.</p>';
+            }
       }
 
-      $this->load->view('update-pass');
+      $this->load->view('update-pass', $data);
 
    }
 }

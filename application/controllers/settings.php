@@ -10,7 +10,9 @@ class Settings extends CI_Controller {
 
 	public function index()
 	{
-		if ( !isset($_SESSION['username']) ) {
+		$this->load->model('Authentication_model');
+
+		if ( !isset($_SESSION['username']) || !$this->Authentication_model->has_updated_password() ) {
 			redirect('login');
 		}
 
@@ -47,6 +49,7 @@ class Settings extends CI_Controller {
 		}	
 
 		$background = $this->input->post('bgcolor');
+
 		if( $this->input->post('contentbgvis') ){
 			$contentbg = 'none';
 		}
@@ -98,6 +101,14 @@ class Settings extends CI_Controller {
 		if ( !isset($_SESSION['username']) ) {
 			redirect('login');
 		}
-		$this->load->view('update-pass');
+		$data = '';
+
+		$this->load->model('Authentication_model');
+
+		if ( !$this->Authentication_model->has_updated_password() ){
+			$data['prompt'] = '<p style="color: red;">You must change your password before using Forget Your Resume.</p>';
+		}
+
+		$this->load->view('update-pass', $data);
 	}
 }

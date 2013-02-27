@@ -74,13 +74,19 @@
 			<?php echo form_open('login/process'); ?>
 				<p>Please enter all login credentials below</p>
 				<p><label>Username:</label><input type="text" name="username" value=""></p>
-				<p><label>Enter Old Password</label><input type="password" name="oldpass"></p>
-				<p><label>Enter New Password</label><input type="password" name="newpass"></p>
-				<p><label>Confirm New Password</label><input type="password" name="newpass2"></p>
+				<p><label>Enter Old Password:</label><input type="password" name="oldpass"></p>
+				<p><label>Enter New Password:</label><input type="password" name="newpass"></p>
+				<p><label>Confirm New Password:</label><input type="password" name="newpass2"></p>
 				<input type="submit">
 			</form>
 
 			<?php echo validation_errors('<p style="color: red;">' , '<p>'); ?>
+
+			<?php
+				if( isset($prompt) ){
+					echo $prompt;
+				}
+			?>
 
 	</div>
 

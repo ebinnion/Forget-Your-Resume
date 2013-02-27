@@ -72,6 +72,7 @@
 	<div id="body">
 		
 		<?php echo form_open('login'); ?>
+
 		<p>
 		   <?php 
 		      echo form_label('Username: ', 'user');
@@ -93,6 +94,11 @@
 
 		<?php echo validation_errors('<p style="color: red;">' , '<p>'); ?>
 
+		<?php
+			if( isset($prompt) ){
+				echo $prompt;
+			}
+		?>
 	</div>
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>

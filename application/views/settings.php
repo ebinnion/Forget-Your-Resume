@@ -69,7 +69,7 @@
 					<div id="tabs1">
 						<p><label>What's Your Name?</label></p>
 						<p><input name="name" type="text" class="input_full" value="<?php echo $object[0]['name']; ?>"></p>
-						<p><label>Describe Yourself in 10 Words or Less</label></p>
+						<p><label>Describe Yourself in 3-6 words</label></p>
 						<p><input name="tagline" type="text" class="input_full" value="<?php echo $object[0]['tagline']; ?>"></p>
 						<p><label>Describe Yourself</label></p>
 						<p><textarea name ="aboutme" rows="10" cols="10" class="texteditor" style="background: #fff!important;"><?php echo $object[0]['aboutme']; ?></textarea></p>

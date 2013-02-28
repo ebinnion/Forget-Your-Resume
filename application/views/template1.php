@@ -37,11 +37,18 @@
 
 			<div class="social-icons pull-right">
 				<?php
+					if ( !empty($object[0]['phone']) ){
+						echo '<a href="tel:' . $object[0]['phone'] . '" class="icon-phone icon-large"></a>';
+					}
+					if ( !empty($object[0]['email']) ){
+						echo '<a href="mailto:' . $object[0]['email'] . '" class="icon-envelope-alt icon-large"></a>';
+					}
 					if ( isset ($object['social_icons']) ){
 						foreach( $object['social_icons'] as $icon) {
 							echo $icon;
 						}
 					}
+					
 				?>
 			</div>
 		</header>
@@ -82,6 +89,19 @@
 	<footer role="contentinfo">
 		<div class="container cf">
 			<p>&copy; Copyright <?php echo date('Y'); ?> <?php echo $object[0]['name']; ?>, All Rights Reserved.</p>
+			<?php 	
+				if ( !empty($object[0]['email']) ){
+					echo '<p><strong>Email:</strong> ' . $object[0]['email'] . '</p>';
+				}
+
+				// if (!empty($object[0]['email']) && !empty($object[0]['phone'])){
+				// 	echo ' | ';
+				// }
+		 			
+	 			if ( !empty($object[0]['phone']) ){
+					echo '<p><strong>Phone:</strong> ' . $object[0]['phone'] . '</p>';
+				}
+		 	?>
 		</div>
 	</footer>
 

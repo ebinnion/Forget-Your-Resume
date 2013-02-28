@@ -41,11 +41,18 @@
 
 			<div class="social-icons pull-right">
 				<?php
+					if ( !empty($object[0]['phone']) ){
+						echo '<a href="tel:' . $object[0]['phone'] . '" class="icon-phone icon-large"></a>';
+					}
+					if ( !empty($object[0]['email']) ){
+						echo '<a href="mailto:' . $object[0]['email'] . '" class="icon-envelope-alt icon-large"></a>';
+					}
 					if ( isset ($object['social_icons']) ){
 						foreach( $object['social_icons'] as $icon) {
 							echo $icon;
 						}
 					}
+					
 				?>
 			</div>
 		</header>
@@ -69,8 +76,18 @@
 					<div id="tabs1">
 						<p><label>What's Your Name?</label></p>
 						<p><input name="name" type="text" class="input_full" value="<?php echo $object[0]['name']; ?>"></p>
+
+						<p><label>What's Your Phone Number?</label><br>
+							Fill this out if you would like your phone number displayed on your website.</p>
+						<p><input name="phone" type="text" class="input_full" value="<?php echo $object[0]['phone']; ?>"></p>
+
+						<p><label>What's Your Email?</label><br>
+							Your email will be used for password recovery and to display on your website.</p>
+						<p><input name="email" type="text" class="input_full" value="<?php echo $object[0]['email']; ?>"></p>
+
 						<p><label>Describe Yourself in 3-6 words</label></p>
 						<p><input name="tagline" type="text" class="input_full" value="<?php echo $object[0]['tagline']; ?>"></p>
+
 						<p><label>Describe Yourself</label></p>
 						<p><textarea name ="aboutme" rows="10" cols="10" class="texteditor" style="background: #fff!important;"><?php echo $object[0]['aboutme']; ?></textarea></p>
 
@@ -218,6 +235,19 @@
 	<footer role="contentinfo">
 		<div class="container cf">
 			<p>&copy; Copyright <?php echo date('Y'); ?> <?php echo $object[0]['name']; ?>, All Rights Reserved.</p>
+			<?php 	
+				if ( !empty($object[0]['email']) ){
+					echo '<p><strong>Email:</strong> ' . $object[0]['email'] . '</p>';
+				}
+
+				// if (!empty($object[0]['email']) && !empty($object[0]['phone'])){
+				// 	echo ' | ';
+				// }
+		 			
+	 			if ( !empty($object[0]['phone']) ){
+					echo '<p><strong>Phone:</strong> ' . $object[0]['phone'] . '</p>';
+				}
+		 	?>
 		</div>
 	</footer>
 

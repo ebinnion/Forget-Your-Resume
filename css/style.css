@@ -1371,7 +1371,8 @@ a:hover {
 [role="contentinfo"] p {
   color: #999999;
   font-size: 0.8em;
-  float: right;
+  text-align: right;
+  margin: 4px 0;
 }
 /* misc */
 .pull-left {

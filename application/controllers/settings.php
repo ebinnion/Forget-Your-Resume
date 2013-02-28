@@ -91,7 +91,9 @@ class Settings extends CI_Controller {
 			'github'         	=> $this->input->post('github'),
 			'employers'			=> $this->input->post('companyNames'),
 			'employerMessage'	=> $this->input->post('companyMsgs'),
-			'googleAnalyticsId'	=> $this->input->post('googleAnalytics')
+			'googleAnalyticsId'	=> $this->input->post('googleAnalytics'),
+			'phone'				=> $this->input->post('phone'),
+			'email'				=> $this->input->post('email')
 		);
 
 		$this->db->where('id', 1);

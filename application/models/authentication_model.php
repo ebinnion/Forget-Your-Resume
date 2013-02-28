@@ -36,7 +36,52 @@ class Authentication_model extends CI_Model {
 		return false;
     }
 
-    public function set_has_updated_password() {
+    public function get_email() {
+    	$q = $this->db->get('users')->result_array();
+    	if ( !empty($q[0]['email']) ) {
+    		return $q[0]['email'];
+    	}
+    	return false;
+    }
 
+    public function update_users_db($data) {
+    	$this->db->where('id', 1);
+        $this->db->update('users', $data);
+    }
+
+    public function set_forgot_password() {
+		$random = '';
+		for ($i = 0; $i < 30; $i++) {
+			$random .= chr(rand(ord('a'), ord('z')));
+		}
+		
+    	$data = array('forgotPassHash'	=> $random);
+    	$this->db->where('id', 1);
+        $this->db->update('users', $data);
+
+    	return $random;
+    }
+
+    public function get_password_hash() {
+    	$q = $this->db->get('users')->result_array();
+    
+    	if ( !empty($q[0]['forgotPassHash']) ) {
+    		return $q[0]['forgotPassHash'];
+    	}
+    	return false;
+    }
+
+    public function reset_password($password) {
+    	$random = '';
+		for ($i = 0; $i < 30; $i++) {
+			$random .= chr(rand(ord('a'), ord('z')));
+		}
+
+    	$data = array(
+    		'forgotPassHash'	=> $random,
+    		'password'			=> sha1($password)
+    	);
+
+    	$this->update_users_db($data);
     }
 }

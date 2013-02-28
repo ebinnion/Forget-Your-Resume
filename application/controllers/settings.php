@@ -40,7 +40,7 @@ class Settings extends CI_Controller {
 			$image_data = array('upload_data' => $this->upload->data());
 			$config['image_library'] = 'gd2';
 			$config['source_image']	= $image_data['upload_data']['full_path'];
-			$config['maintain_ratio'] = FALSE;
+			$config['maintain_ratio'] = true;
 			$config['width'] = 320;
 			$config['height'] = 400;
 
@@ -112,6 +112,8 @@ class Settings extends CI_Controller {
 		if ( !$this->Authentication_model->has_updated_password() ){
 			$data['prompt'] = '<p style="color: red;">You must change your password before using Forget Your Resume.</p>';
 		}
+
+		$data['email'] = $this->Authentication_model->get_email();
 
 		$this->load->view('update-pass', $data);
 	}

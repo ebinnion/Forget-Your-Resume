@@ -82,7 +82,7 @@
 						<p><input name="phone" type="text" class="input_full" value="<?php echo $object[0]['phone']; ?>"></p>
 
 						<p><label>What's Your Email?</label><br>
-							Your email will be used for password recovery and to display on your website.</p>
+							Fill this out if you would like your email displayed on your website.</p>
 						<p><input name="email" type="text" class="input_full" value="<?php echo $object[0]['email']; ?>"></p>
 
 						<p><label>Describe Yourself in 3-6 words</label></p>

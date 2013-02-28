@@ -67,31 +67,29 @@
 <body>
 
 <div id="container">
-	<h1>Please Login</h1>
+	<h1>Reset Password</h1>
 
 	<div id="body">
 		
-		<?php echo form_open('login'); ?>
+		<?php echo form_open('login/do_reset'); ?>
 
 		<p>
 		   <?php 
-		      echo form_label('Username: ', 'user');
-		      echo form_input('user', set_value('user'), 'id="user" autofocus');
+		      echo form_label('Enter your new password: ', 'newpass');
+		      echo form_input('newpass', set_value('newpass'), 'id="newpass" autofocus');
 		   ?>
 		</p>
 
 		<p>
 		   <?php 
-		      echo form_label('Password:', 'password');
-		      echo form_password('password', '', 'id="password"');
+		      echo form_label('Verify your new password: ', 'verifypass');
+		      echo form_input('verifypass', set_value('verifypass'), 'id="verifypass"');
 		   ?>
 		</p>
 
-		<p>
-		   <?php echo form_submit('submit', 'Login'); ?>
-		</p>
+		<input type="submit">
 		<?php echo form_close(); ?>
-		<a href="<?php echo base_url(); ?>login/forgot_pass">Forget your password?</a>
+
 		<?php echo validation_errors('<p style="color: red;">' , '<p>'); ?>
 
 		<?php

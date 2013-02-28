@@ -77,6 +77,7 @@
 				<p><label>Enter Old Password:</label><input type="password" name="oldpass"></p>
 				<p><label>Enter New Password:</label><input type="password" name="newpass"></p>
 				<p><label>Confirm New Password:</label><input type="password" name="newpass2"></p>
+				<p><label>Email:</label><input type="text" style="width:300px;" name="email" value="<?php if(!empty($email)) { echo $email;} ?>"></p>
 				<input type="submit">
 			</form>
 

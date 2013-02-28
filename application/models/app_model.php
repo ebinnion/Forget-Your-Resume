@@ -13,7 +13,7 @@ class App_model extends CI_Model {
 
 		$data['styles'] = '';
 
-		if ( isset( $data[0]['background'] ) ){
+		if ( !empty( $data[0]['background'] ) ){
 			$data['styles'] .= 'body { background:' . $data[0]['background'] . '}';
 		}
 		else {

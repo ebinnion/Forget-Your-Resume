@@ -98,8 +98,15 @@
 
 					</div>
 
-					<div id="tabs2">
+					<div id="tabs2" style="padding-bottom: 200px;">
 						<div class="cf">
+							<div class="alert">
+								<h2>A Quick Note for Nick Reese</h2>
+								<p><em>This is an example that you can sthyle with the colors below.</em></p>
+								<p>Hey Nick Reese -- you should hire me because I'm a rockstar. This is a longer bock of text with more information about me. I like bacon and travel a lot.</p>
+								<p>Below you will find a brief overview of who I am and how I can make your company more money. If you wish to contact me directly please do so by calling my cell: 941-545-5555 or emailing me at nick@notreal.com</p>
+								<p>Not <strong>Nick Reese</strong>? Help me reach Nick Reese by sharing this message with him on twitter.</p>
+							</div>
 							<p><label style="margin-right: 10px;">Content Background:</label><input class="minicolors minicolors-input opacity" type="text" name="contentbg" value="<?php echo $object[0]['contentbg']; ?>" data-selector=".content" data-selecttype="background">
 									<label style="margin: 0 10px;">Invisible?</label><input type="checkbox" name="contentbgvis" value="Yes" <?php if($object[0]['contentbgvis'] == 'Yes'){ echo 'checked="checked"';} ?> ></p>
 							<p><label style="margin-right: 10px;">Footer Background:</label><input class="minicolors minicolors-input opacity" type="text" name="footerbg" value="<?php echo $object[0]['footerbg']; ?>" data-selector="footer" data-selecttype="background"></p>
@@ -109,6 +116,11 @@
 							<p><label style="margin-right: 10px;">Tagline Color:</label><input class="minicolors minicolors-input opacity" type="text" name="taglinecolor" value="<?php echo $object[0]['taglinecolor']; ?>" data-selector='[role="banner"] h2' data-selecttype="color"></p>
 							<p><label style="margin-right: 10px;">Link Color:</label><input class="minicolors minicolors-input opacity" type="text" name="linkcolor" value="<?php echo $object[0]['linkcolor']; ?>" data-selector='[role="main"] a' data-selecttype="color"></p>
 							<p><label style="margin-right: 10px;">Link Hover Color:</label><input class="minicolors minicolors-input opacity" type="text" name="linkhovercolor" value="<?php echo $object[0]['linkhovercolor']; ?>"data-selector='[role="main"] a:hover' data-selecttype="color"></p>
+
+							<p><label style="margin-right: 10px;">Company Targeting Background Color:</label><input class="minicolors minicolors-input opacity" type="text" name="companyBg" value="<?php echo $object[0]['companyBg']; ?>" data-selector='.alert' data-selecttype="background"></p>
+							<p><label style="margin-right: 10px;">Company Targeting Border Color:</label><input class="minicolors minicolors-input opacity" type="text" name="companyBorder" value="<?php echo $object[0]['companyBorder']; ?>" data-selector='.alert' data-selecttype="border-color"></p>
+							<p><label style="margin-right: 10px;">Company Targeting Font Color:</label><input class="minicolors minicolors-input opacity" type="text" name="companyFont" value="<?php echo $object[0]['companyFont']; ?>"data-selector='.alert' data-selecttype="color"></p>
+
 						</div>
 					</div>
 

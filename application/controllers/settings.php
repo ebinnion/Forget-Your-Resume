@@ -93,7 +93,10 @@ class Settings extends CI_Controller {
 			'employerMessage'	=> $this->input->post('companyMsgs'),
 			'googleAnalyticsId'	=> $this->input->post('googleAnalytics'),
 			'phone'				=> $this->input->post('phone'),
-			'email'				=> $this->input->post('email')
+			'email'				=> $this->input->post('email'),
+			'companyBg'			=> $this->input->post('companyBg'),
+			'companyBorder'		=> $this->input->post('companyBorder'),
+			'companyFont'		=> $this->input->post('companyFont')
 		);
 
 		$this->db->where('id', 1);

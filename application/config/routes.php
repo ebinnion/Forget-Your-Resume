@@ -38,7 +38,7 @@
 |
 */
 
-$route['company/(:any)'] = "main/company/$1";
+$route['welcome/(:any)'] = "main/company/$1";
 $route['default_controller'] = 'main';
 $route['404_override'] = 'main';
 

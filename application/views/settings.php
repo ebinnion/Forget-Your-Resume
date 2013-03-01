@@ -69,7 +69,7 @@
 						<li class='tab'><a href="#tabs2">Colors</a></li>
 						<li class='tab'><a href="#tabs3">Images</a></li>
 						<li class='tab'><a href="#tabs4">Social</a></li>
-						<li class='tab'><a href="#tabs5">Target Company</a></li>
+						<li class='tab'><a href="#tabs5">Welcome Message</a></li>
 						<li class='tab'><a href="#tabs6">Other</a></li>
 					</ul>
 
@@ -179,14 +179,14 @@
 								echo '<a href="#" class="icon-remove-circle removeCompany pull-right">  Delete</a>';
 								echo '<p style="margin-top: 0;"><label>Enter Company Name</label><br><input class="companyName" type="text" value="' . $employerList[$i] . '"></p>';
 								echo '<p><label>Enter Message to Company</label><br><textarea rows="10" class="companyMsg">' . $employerMsgList[$i] . '</textarea></p>';
-								echo '<p><label>Company URL</label><br><input class="input_full" type="text" value="' . base_url() . 'company/' . $companySlug . '" readonly></p>';
+								echo '<p><label>Company URL</label><br><input class="input_full" type="text" value="' . base_url() . 'welcome/' . $companySlug . '" readonly></p>';
 								echo '</div>';
 								echo '<hr>';
 								$i++;
 							}
 						?>
 
-						<a href="#" class="icon-plus-sign add-employer">  Add Target Company</a>
+						<a href="#" class="icon-plus-sign add-employer">  Add Welcome Message</a>
 						<input type="hidden" name="companyNames">
 						<input type="hidden" name="companyMsgs">
 					</div>

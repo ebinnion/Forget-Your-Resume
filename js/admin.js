@@ -171,7 +171,7 @@ $(document).ready(function() {
 		var temp = $('#tabs5');
 		var numRand = String((new Date()).getTime()).replace(/\D/gi,'')
 
-		temp.prepend('<p><label>Enter Message to Company</label><br><textarea rows="10" id ="' + numRand + '"class="companyMsg"></textarea></p>');
+		temp.prepend('<p><label>Enter Welcome Message</label><br><textarea rows="10" id ="' + numRand + '"class="companyMsg"></textarea></p>');
 		temp.prepend('<p><label>Enter Company Name</label><br><input class="companyName" type="text"></p>');
 		
 		tinyMCE.execCommand('mceAddControl', false, numRand);

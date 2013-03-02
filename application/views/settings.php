@@ -101,11 +101,19 @@
 					<div id="tabs2" style="padding-bottom: 200px;">
 						<div class="cf">
 							<div class="alert">
-								<h2>A Quick Note for Nick Reese</h2>
-								<p><em>This is an example that you can sthyle with the colors below.</em></p>
-								<p>Hey Nick Reese -- you should hire me because I'm a rockstar. This is a longer bock of text with more information about me. I like bacon and travel a lot.</p>
-								<p>Below you will find a brief overview of who I am and how I can make your company more money. If you wish to contact me directly please do so by calling my cell: 941-545-5555 or emailing me at nick@notreal.com</p>
-								<p>Not <strong>Nick Reese</strong>? Help me reach Nick Reese by sharing this message with him on twitter.</p>
+								<p>An effective Welcome Message is always tailored to the person reading it.</p>
+
+								<p>If you've met the person before, mention that. If you haven't, then mention why you want to work with them and what you offer.</p>
+
+								<p>Make sure that you at least cover these 4 basics:</p>
+								<ul>
+									<li>Describe who you are</li>
+									<li>Why they should care</li>
+									<li>Why you are different</li>
+									<li>How you are going to help their company</li>
+
+								</ul>
+								<p>If you cover these bases they are going to be much more likely read your message.</p>
 							</div>
 							<p><label style="margin-right: 10px;">Content Background:</label><input class="minicolors minicolors-input opacity" type="text" name="contentbg" value="<?php echo $object[0]['contentbg']; ?>" data-selector=".content" data-selecttype="background">
 									<label style="margin: 0 10px;">Invisible?</label><input type="checkbox" name="contentbgvis" value="Yes" <?php if($object[0]['contentbgvis'] == 'Yes'){ echo 'checked="checked"';} ?> ></p>
